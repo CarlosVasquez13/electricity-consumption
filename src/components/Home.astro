@@ -1,0 +1,36 @@
+---
+import logoBlue from '../assets/images/logo_blue.png';
+---
+
+<h1> Landing page</h1>
+<div class="grid grid-rows-2 gap-4">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="p-4 flex flex-col items-center justify-center">
+            <div>
+                <img src={logoBlue.src} alt="Logo" class="w-96 h-auto" />
+            </div>
+            <p class="bg:red; text-gray-50 text-2xl text-center mt-4">
+            ¡Bienvenido! Esta web está diseñada para ayudarte a calcular de manera sencilla el consumo de energía eléctrica en tu hogar y obtener una estimación de tu factura. 
+            Solo necesitas ingresar los aparatos electrónicos que utilizas, y además recibirás consejos prácticos para ahorrar energía y reducir costos.             
+            </p>
+            <strong class="text-green-300 text-2xl font-semibold mt-2">
+            ¡Cuidemos juntos el planeta mientras ahorramos!
+            </strong>
+
+        </div>
+        <div class="p-4">
+                    <div>
+                        Grafico
+                    </div>
+
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="flex justify-center items-center w-4/5 mx-auto">
+            <hr class="w-full border-blue-500 mr-4" />
+            <a href="/aparatos" class="w-80 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 text-center block">
+            Calcular Consumo
+            </a>
+        </div>
+    </div>
+</div>
