@@ -1,10 +1,11 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import AgregarAparatos from "../components/AgregarAparatos.astro";
+import IngresarAparatos from "../components/IngresarAparatos";
+//
 ---
 
 <Layout>
     <Header />
-    <AgregarAparatos />
+    <IngresarAparatos client:load />
 </Layout>
