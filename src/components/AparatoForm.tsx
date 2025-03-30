@@ -28,8 +28,6 @@ const AparatoForm = (
 
     const handleSubmit = (e: Event) => {
         e.preventDefault();
-        debugger;
-        console.log('Aparato agregado:', aparato);
         onAgregarAparato(aparato);
         setAparato({
             nombre: '',
@@ -46,7 +44,13 @@ const AparatoForm = (
         }));
     };
 
-    const opcionesAparatos = ['Refrigerador', 'Televisor', 'Microondas', 'Lavadora'];
+    const opcionesAparatos = ['Refrigerador', 'Televisor', 'Microondas', 'Lavadora',
+        'Aire Acondicionado', 'Computadora', 'Horno Eléctrico', 'Secadora de Pelo', 'Plancha', 'Calentador de Agua'
+        , 'Estufa Eléctrica', 'Lavavajillas', 'Cafetera', 'Ventilador', 'Tostadora', 'Batidora', 'Freidora Eléctrica', 'Horno de Convección'
+        , 'Secadora de Ropa', 'Aspiradora', 'Deshumidificador', 'Humidificador', 'Purificador de Aire', 'Calefactor'
+        , 'Cortadora de Césped Eléctrica', 'Sierra Eléctrica', 'Taladro Eléctrico', 'Compresora de Aire', 'Soldadora Eléctrica'
+        , 'Lijadora Eléctrica', 'Esmeriladora', 'Amoladora', 'Desmalezadora Eléctrica', 'Sierra Circular Eléctrica'
+    ];
 
     return (
         <form onSubmit={handleSubmit}
