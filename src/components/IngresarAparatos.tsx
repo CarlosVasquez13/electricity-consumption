@@ -21,7 +21,7 @@ const IngresarAparatos = () => {
   return (
     <div class="container mx-auto p-4">
       <div class="grid grid-cols-4 gap-4">
-        <div class="bg-gray-200 p-4 col-span-3">
+        <div class="p-4 col-span-3">
           <AparatosTable aparatos={aparatos} onEliminarAparato={eliminarAparato}/>
         </div>
 
@@ -31,8 +31,7 @@ const IngresarAparatos = () => {
       </div>
 
       <div class="mt-4">
-        <div class="bg-gray-200 p-4">
-          Columna única
+        <div class="p-4">
           <div>
             <button class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-offset-2">
               Calcular Consumo
