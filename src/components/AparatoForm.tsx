@@ -37,7 +37,7 @@ const AparatoForm = (
             tiempoUso: 0,
             id: 0,
             consumoTotal: 0,
-            tipoPotencia: 1
+            tipoPotencia: aparato.tipoPotencia
         });
     };
     const handleDropdownChange = (e: Event) => {
@@ -115,7 +115,7 @@ const AparatoForm = (
                         onChange={handleTipoPotenciaChange}
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     >
-                        <option value="1" disabled>
+                        <option value={aparato.tipoPotencia} disabled>
                             Selecciona el tipo de potencia
                         </option>
                         <option value="1">Kw</option>
