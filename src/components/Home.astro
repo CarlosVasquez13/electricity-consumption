@@ -1,5 +1,6 @@
 ---
 import logoBlue from '../assets/images/logo_blue.png';
+import graficoConsumo from '../assets/images/generacion.png';
 ---
 
 <div class="gap-4">
@@ -18,8 +19,17 @@ import logoBlue from '../assets/images/logo_blue.png';
 
         </div>
         <div class="p-4">
-                    <div>
-                        Grafico
+                    <div class="flex flex-col pt-6 items-center">
+                        <img src={graficoConsumo.src} alt="Descripción de la imagen" 
+                        class="w-auto h-auto border border-blue-500" />
+                        <p class="text-white text-center mt-2">
+                            Matriz de generación de electricidad 2023
+                        </p>
+                        <a href="https://sen.hn/wp-content/uploads/2024/08/IEASEN-2023_7.8.2024.pdf"
+                        target="_blank"
+                        class=" text-blue-500 font-bold py-2 px-4 rounded hover:text-white mt-2">
+                            Fuente: Centro Nacional de Despacho (CND)
+                        </a>
                     </div>
 
         </div>
