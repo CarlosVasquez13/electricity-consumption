@@ -30,7 +30,6 @@ const AparatoForm = (
 
     const handleSubmit = (e: Event) => {
         e.preventDefault();
-        console.log('[handleSubmit]', aparato);
         onAgregarAparato(aparato);
         setAparato({
             nombre: '',
@@ -51,8 +50,6 @@ const AparatoForm = (
 
     const handleTipoPotenciaChange = (e: Event) => {
         const target = e.target as HTMLSelectElement;
-        console.log('[handleTipoPotenciaChange]', target.value);
-
         setAparato((prev) => ({
             ...prev,
             tipoPotencia: Number(target.value),
@@ -97,7 +94,7 @@ const AparatoForm = (
                         Potencia
                     </label>
                     <input
-                        type="number"
+                        type="decimal"
                         id="potencia"
                         name="potencia"
                         value={aparato.potencia}
@@ -129,7 +126,7 @@ const AparatoForm = (
                     Tiempo de Uso (horas)
                 </label>
                 <input
-                    type="number"
+                    type="decimal"
                     id="tiempoUso"
                     name="tiempoUso"
                     value={aparato.tiempoUso}

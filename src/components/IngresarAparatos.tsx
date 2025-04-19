@@ -15,7 +15,6 @@ const IngresarAparatos = () => {
 
     const agregarAparato = (aparato: Aparato) => {
       //aparto.tipoPotencia: 1:kw, 2w
-      console.log('[tipoPotencia]', aparato.tipoPotencia);
       let potencia = aparato.tipoPotencia === 1 ? aparato.potencia : aparato.potencia / 1000;
       aparato.potencia = potencia;
 
@@ -35,18 +34,18 @@ const IngresarAparatos = () => {
         if (consumoTotalAcum <= 50) {
           totalPagar = consumoTotalAcum * precioPrimeros50;
         }
-
         else {
           totalPagar = (50 * precioPrimeros50) + ((consumoTotalAcum - 50) * precioKw);
         }
-        totalPagar = Math.round(totalPagar * 100) / 100;
 
+        //redondear a 2 decimales
+        totalPagar = Math.round(totalPagar * 100) / 100;
         setFacturaTotal(totalPagar);
-        console.log('[totalPagar]', totalPagar);
     }
 
     const eliminarAparato = (id: number) => {
         setAparatos((prev) => prev.filter((aparato) => aparato.id !== id));
+        actualizarTotales();
     }
 
     // Save the list of "aparatos" to localStorage whenever it changes
