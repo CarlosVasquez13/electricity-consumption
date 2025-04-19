@@ -58,6 +58,7 @@ const IngresarAparatos = () => {
 
     useEffect(() => {
       window.localStorage.setItem("aparatos", JSON.stringify(aparatos));
+      actualizarTotales();
     }, [aparatos]);
     
   return (
@@ -88,7 +89,7 @@ const IngresarAparatos = () => {
         </div>
       </div>
 
-      <div class="mt-4">
+      {/* <div class="mt-4">
         <div class="p-4">
           <div>
             <button class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-offset-2">
@@ -96,7 +97,7 @@ const IngresarAparatos = () => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

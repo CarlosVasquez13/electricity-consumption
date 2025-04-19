@@ -67,6 +67,9 @@ const AparatoForm = (
     return (
         <form onSubmit={handleSubmit}
          class="p-4 bg-gray-100 rounded shadow-md">
+                <label for="" class="block text-sm font-medium text-gray-700">
+                    Uso mensual
+                </label>
             <div class="mb-4">
                 <label for="nombre" class="block text-sm font-medium text-gray-700">
                     Aparato
