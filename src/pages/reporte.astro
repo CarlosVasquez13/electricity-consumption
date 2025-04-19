@@ -1,11 +1,12 @@
 ---
 import Header from "../components/Header.astro";
+import Report from "../components/Report";
 import Layout from "../layouts/Layout.astro";
-import IngresarAparatos from "../components/IngresarAparatos";
-//
+
+
 ---
 
 <Layout>
-    <Header />
-    <IngresarAparatos client:only />
+	<Header/>
+    <Report client:only/>
 </Layout>

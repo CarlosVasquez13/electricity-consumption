@@ -26,11 +26,11 @@ const AparatosTable = ({ aparatos, onEliminarAparato }: IProps) => {
             </th>
             <th scope="col" class="px-6 py-3">
               {" "}
-              Potencia{" "}
+              Potencia(kw){" "}
             </th>
             <th scope="col" class="px-6 py-3">
               {" "}
-              Tiempo uso diario(hrs){" "}
+              Tiempo uso mensual(hrs){" "}
             </th>
 
             <th scope="col" class="px-1 py-3">

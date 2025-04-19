@@ -14,6 +14,8 @@ const AparatoForm = (
         potencia: 0,
         tiempoUso: 0,
         id: 0,
+        consumoTotal: 0,
+        tipoPotencia: 1
     });
 
     const handleInputChange = (e: Event) => {
@@ -28,12 +30,15 @@ const AparatoForm = (
 
     const handleSubmit = (e: Event) => {
         e.preventDefault();
+        console.log('[handleSubmit]', aparato);
         onAgregarAparato(aparato);
         setAparato({
             nombre: '',
             potencia: 0,
             tiempoUso: 0,
-            id: 0
+            id: 0,
+            consumoTotal: 0,
+            tipoPotencia: 1
         });
     };
     const handleDropdownChange = (e: Event) => {
@@ -43,6 +48,16 @@ const AparatoForm = (
             nombre: target.value,
         }));
     };
+
+    const handleTipoPotenciaChange = (e: Event) => {
+        const target = e.target as HTMLSelectElement;
+        console.log('[handleTipoPotenciaChange]', target.value);
+
+        setAparato((prev) => ({
+            ...prev,
+            tipoPotencia: Number(target.value),
+        }));
+    }
 
     const opcionesAparatos = ['Refrigerador', 'Televisor', 'Microondas', 'Lavadora',
         'Aire Acondicionado', 'Computadora', 'Horno Eléctrico', 'Secadora de Pelo', 'Plancha', 'Calentador de Agua'
@@ -57,7 +72,7 @@ const AparatoForm = (
          class="p-4 bg-gray-100 rounded shadow-md">
             <div class="mb-4">
                 <label for="nombre" class="block text-sm font-medium text-gray-700">
-                    Nombre del Aparato
+                    Aparato
                 </label>
                 <select
                     id="nombre"
@@ -76,18 +91,38 @@ const AparatoForm = (
                     ))}
                 </select>
             </div>
-            <div class="mb-4">
-                <label for="potencia" class="block text-sm font-medium text-gray-700">
-                    Potencia (W)
-                </label>
-                <input
-                    type="number"
-                    id="potencia"
-                    name="potencia"
-                    value={aparato.potencia}
-                    onChange={handleInputChange}
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
+            <div class="mb-4 flex justify-between">
+                <div class="mb-4">
+                    <label for="potencia" class="block text-sm font-medium text-gray-700">
+                        Potencia
+                    </label>
+                    <input
+                        type="number"
+                        id="potencia"
+                        name="potencia"
+                        value={aparato.potencia}
+                        onChange={handleInputChange}
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                </div>
+                <div class="mb-4">
+                    <label for="categoria" class="block text-sm font-medium text-gray-700">
+                        Tipo Potencia
+                    </label>
+                    <select
+                        id="potenciaTipo"
+                        name="tipoPotencia"
+                        onChange={handleTipoPotenciaChange}
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    >
+                        <option value="1" disabled>
+                            Selecciona el tipo de potencia
+                        </option>
+                        <option value="1">Kw</option>
+                        <option value="2">w</option>
+                    </select>
+                </div>
+                
             </div>
             <div class="mb-4">
                 <label for="tiempoUso" class="block text-sm font-medium text-gray-700">
